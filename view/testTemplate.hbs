@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="color: #002060;">
+
+<div style="text-align: center;margin-bottom: 10px;">
+</div>
+<h1>List of Posts</h1>
+ <table>
+        <tbody>
+            {{#each data}}
+                <tr>
+                    <td>id: {{_id}}
+                            <ul>
+                                    <li>title: {{title}}</li>
+                                    <li>body: {{body}}</li>
+                            </ul>
+                    </td>
+                    <td>{{email}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</body>
+</html>
