@@ -27,8 +27,17 @@ export class PostService {
   findAll() {
     return this.PostModal.find();
   }
-  findPerPagination(index: number, per: number) {
-    return this.PostModal.find().skip(index * per).limit(per);
+  async findPerPagination(index: number, per: number) {
+    if(index==0)
+      return {
+        "data": [],
+        "numberPages" : 0
+      };
+
+    return {
+      "data": await this.PostModal.find().skip((index-1) * per).limit(per),
+      "numberPages" : Math.ceil(await this.PostModal.count() / per)
+    };
   }
 
   findOne(id: string) {
