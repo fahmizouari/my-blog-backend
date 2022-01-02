@@ -10,8 +10,8 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    //MongooseModule.forRoot('mongodb+srv://root:root@cluster0.0giqu.mongodb.net/blog?retryWrites=true&w=majority'), 
-    MongooseModule.forRoot('mongodb+srv://root:root@cluster0.eimjt.mongodb.net/test'), 
+    //MongooseModule.forRoot('mongodb+srv://root:root@cluster0.eimjt.mongodb.net/blog?retryWrites=true&w=majority'), 
+    MongooseModule.forRoot('mongodb+srv://root:root@cluster0.eimjt.mongodb.net/test?retryWrites=true&w=majority'), 
     ScheduleModule.forRoot(),
     PostModule, 
     UserModule, 
